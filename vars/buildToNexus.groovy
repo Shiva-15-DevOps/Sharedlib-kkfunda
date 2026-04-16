@@ -1,14 +1,6 @@
 def call() {
 
    stage('Build'){
-     sh "mvn clean package"
+     sh "mvn clean package sonar:sonar deploy"
      }
-  
-  stage('SQ'){
-    sh "mvn sonar:sonar"
-  }
-  
-  stage('Nexus'){
-    sh "mvn deploy"
-  }
 }
